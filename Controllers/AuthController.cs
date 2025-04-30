@@ -43,5 +43,11 @@ namespace SpendWise.API.Controllers
 
             return Ok(new { message = "Login successful", token = result });
         }
+        [HttpGet("healthcheck")]
+        public IActionResult HealthCheck()
+        {
+            return Ok(new { status = "Healthy", timestamp = DateTime.UtcNow });
+        }
+
     }
 }
